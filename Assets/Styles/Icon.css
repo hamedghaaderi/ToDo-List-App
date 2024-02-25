@@ -26,8 +26,17 @@ i {
 
 .edit:before {
   content: "\e900";
+  color: #3d7aff;
+  border: 1px solid;
+  border-radius: 3px;
+  padding: 5px;
+  font-size: 18px;
 }
 .delete:before {
   content: "\e901";
   color: #d93735;
+  border: 1px solid;
+  border-radius: 3px;
+  padding: 5px;
+  font-size: 18px;
 }

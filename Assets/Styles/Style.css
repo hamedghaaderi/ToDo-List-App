@@ -51,6 +51,11 @@ body {
   align-items: center;
   justify-content: space-between;
 
+  #clear-btn.active-btn {
+    cursor: default;
+    background-color: #3d7aff;
+  }
+
   #clear-btn {
     background-color: #7ea8ff;
     border-radius: 5px;
@@ -67,10 +72,37 @@ body {
     align-items: center;
     justify-content: space-between;
   }
+
+  #filters span.active-filter {
+    color: #3d7aff;
+  }
 }
+
 #result-container {
   width: 100%;
   padding: 5px 27px 5px 27px;
   max-height: 205px;
   overflow: scroll;
+
+  li {
+    height: 60px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    label.checked {
+      text-decoration: line-through;
+    }
+  }
+
+  li#empty {
+    font-size: 15px;
+    margin-top: 27px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0px;
 }
