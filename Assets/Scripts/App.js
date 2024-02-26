@@ -5,18 +5,28 @@ var pending = document.getElementById("pending");
 var completed = document.getElementById("completed");
 var clearBtn = document.getElementById("clear-btn");
 var items = [];
+var isTaskEdited = false;
+var textId;
 
 input.addEventListener("keyup", function (event) {
   var inputValue = input.value.trim();
 
   if (event.key === "Enter" && inputValue) {
-    var item = {
-      todoTitle: inputValue,
-      todoStatus: "pending",
-    };
-    items.push(item);
+    if (isTaskEdited == false) {
+      var item = {
+        todoTitle: inputValue,
+        todoStatus: "pending",
+      };
+      items.push(item);
+    } else {
+      isTaskEdited = false;
+      items[textId].todoTitle = inputValue;
+    }
     input.value = "";
     showToDoItem("all");
+    all.classList.add("active-filter");
+    pending.classList.remove("active-filter");
+    completed.classList.remove("active-filter");
   }
 });
 
@@ -53,7 +63,7 @@ function showToDoItem(filter) {
                         class="${completedStatus}">${item.todoTitle}</label>
                   </div>
                   <div>
-                    <i class="edit"></i>
+                    <i class="edit" onclick="editToDoItem(event, ${index})"></i>
                     <i class="delete" onclick="deleteToDoItem(${index})"></i>
                   </div>
               </li>
@@ -124,4 +134,15 @@ function deleteToDoItem(index) {
   all.classList.add("active-filter");
   pending.classList.remove("active-filter");
   completed.classList.remove("active-filter");
+}
+
+function editToDoItem(event, index) {
+  var labelValue =
+    event.target.parentElement.parentElement.children[0].children[1]
+      .textContent;
+
+  textId = index;
+  input.value = labelValue;
+  input.focus();
+  isTaskEdited = true;
 }
