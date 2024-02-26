@@ -122,7 +122,7 @@ clearBtn.addEventListener("click", function () {
   clearBtn.classList.remove("active-btn");
   clearBtn.setAttribute("disabled", "");
 
-  all.classList.remove("active-filter");
+  all.classList.add("active-filter");
   pending.classList.remove("active-filter");
   completed.classList.remove("active-filter");
 });
