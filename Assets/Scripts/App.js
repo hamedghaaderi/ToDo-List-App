@@ -107,3 +107,15 @@ completed.addEventListener("click", function () {
   pending.classList.remove("active-filter");
   completed.classList.add("active-filter");
 });
+
+clearBtn.addEventListener("click", function () {
+  items = [];
+  showToDoItem("all");
+
+  clearBtn.classList.remove("active-btn");
+  clearBtn.setAttribute("disabled", "");
+
+  all.classList.remove("active-filter");
+  pending.classList.remove("active-filter");
+  completed.classList.remove("active-filter");
+});
