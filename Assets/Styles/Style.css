@@ -73,6 +73,10 @@ body {
     justify-content: space-between;
   }
 
+  #filters span:hover {
+    cursor: default;
+  }
+
   #filters span.active-filter {
     color: #3d7aff;
   }

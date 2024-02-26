@@ -74,3 +74,36 @@ function showToDoItem(filter) {
 }
 
 showToDoItem("all");
+
+function updateToDoItem(event, index) {
+  var label = event.target.nextElementSibling;
+
+  if (items[index].todoStatus === "pending") {
+    items[index].todoStatus = "completed";
+    label.classList.add("checked");
+  } else {
+    items[index].todoStatus = "pending";
+    label.classList.remove("checked");
+  }
+}
+
+all.addEventListener("click", function () {
+  showToDoItem("all");
+  all.classList.add("active-filter");
+  pending.classList.remove("active-filter");
+  completed.classList.remove("active-filter");
+});
+
+pending.addEventListener("click", function () {
+  showToDoItem("pending");
+  all.classList.remove("active-filter");
+  pending.classList.add("active-filter");
+  completed.classList.remove("active-filter");
+});
+
+completed.addEventListener("click", function () {
+  showToDoItem("completed");
+  all.classList.remove("active-filter");
+  pending.classList.remove("active-filter");
+  completed.classList.add("active-filter");
+});
