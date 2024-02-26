@@ -21,7 +21,7 @@ body {
 #container {
   background-color: white;
   border-radius: 7px;
-  width: 30vw;
+  width: 40vw;
 }
 
 #input-container {
@@ -96,6 +96,12 @@ body {
     align-items: center;
     justify-content: space-between;
 
+    label {
+      position: relative;
+      bottom: 2px;
+      margin-left: 5px;
+    }
+
     label.checked {
       text-decoration: line-through;
     }
@@ -108,4 +114,77 @@ body {
 
 ::-webkit-scrollbar {
   width: 0px;
+}
+
+@media screen and (max-width: 1279px) {
+  #container {
+    width: 52vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #container {
+    width: 77vw;
+  }
+
+  #btn-container {
+    #filters {
+      flex-grow: 0.5;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #container {
+    width: 90vw;
+  }
+
+  #input-container {
+    padding: 20px 20px 0 20px;
+    margin-bottom: 15px;
+
+    #task-input {
+      height: 40px;
+      font-size: 13px;
+      padding: 10px 10px 10px 35px;
+      background-size: 17px;
+    }
+  }
+
+  #btn-container {
+    padding: 0 20px 20px 20px;
+    margin-top: 15px;
+
+    #filters {
+      flex-grow: 0.3;
+
+      span {
+        font-size: 13px;
+      }
+    }
+
+    #clear-btn {
+      padding: 10px;
+      font-size: 12px;
+    }
+  }
+
+  #result-container {
+    padding: 5px 20px 0px 20px;
+    max-height: 170px;
+
+    li {
+      height: 50px;
+      font-size: 13px;
+
+      input {
+        width: 11px;
+        height: 11px;
+      }
+    }
+
+    li#empty {
+      font-size: 13px;
+    }
+  }
 }
