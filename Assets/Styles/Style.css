@@ -21,7 +21,7 @@ body {
 #container {
   background-color: white;
   border-radius: 7px;
-  width: 30vw;
+  width: 40vw;
 }
 
 #input-container {
@@ -95,6 +95,12 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+
+    label {
+      position: relative;
+      bottom: 2px;
+      margin-left: 5px;
+    }
 
     label.checked {
       text-decoration: line-through;
