@@ -54,7 +54,7 @@ function showToDoItem(filter) {
                   </div>
                   <div>
                     <i class="edit"></i>
-                    <i class="delete"></i>
+                    <i class="delete" onclick="deleteToDoItem(${index})"></i>
                   </div>
               </li>
               `;
@@ -116,3 +116,12 @@ clearBtn.addEventListener("click", function () {
   pending.classList.remove("active-filter");
   completed.classList.remove("active-filter");
 });
+
+function deleteToDoItem(index) {
+  items.splice(index, 1);
+  showToDoItem("all");
+
+  all.classList.add("active-filter");
+  pending.classList.remove("active-filter");
+  completed.classList.remove("active-filter");
+}
