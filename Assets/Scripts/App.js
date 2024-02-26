@@ -17,9 +17,6 @@ input.addEventListener("keyup", function (event) {
     items.push(item);
     input.value = "";
     showToDoItem("all");
-    all.classList.add("active-filter");
-    pending.classList.remove("active-filter");
-    completed.classList.remove("active-filter");
   }
 });
 
