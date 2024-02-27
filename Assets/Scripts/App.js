@@ -106,6 +106,15 @@ pending.addEventListener("click", function () {
   all.classList.remove("active-filter");
   pending.classList.add("active-filter");
   completed.classList.remove("active-filter");
+
+  var isPending = items.every(function (item) {
+    return item.todoStatus !== "pending";
+  });
+
+  if (isPending == true) {
+    var liTag = `<li id="empty">You don't have any task here</li>`;
+    resultContainer.innerHTML = liTag;
+  }
 });
 
 completed.addEventListener("click", function () {
@@ -113,6 +122,15 @@ completed.addEventListener("click", function () {
   all.classList.remove("active-filter");
   pending.classList.remove("active-filter");
   completed.classList.add("active-filter");
+
+  var isPending = items.every(function (item) {
+    return item.todoStatus !== "completed";
+  });
+
+  if (isPending == true) {
+    var liTag = `<li id="empty">You don't have any task here</li>`;
+    resultContainer.innerHTML = liTag;
+  }
 });
 
 clearBtn.addEventListener("click", function () {
@@ -134,6 +152,12 @@ function deleteToDoItem(index) {
   all.classList.add("active-filter");
   pending.classList.remove("active-filter");
   completed.classList.remove("active-filter");
+
+  var firstLiTag = document.getElementById("item-0");
+  if (!firstLiTag) {
+    clearBtn.classList.remove("active-btn");
+    clearBtn.setAttribute("disabled", "");
+  }
 }
 
 function editToDoItem(event, index) {
