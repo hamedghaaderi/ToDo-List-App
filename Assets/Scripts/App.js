@@ -134,6 +134,12 @@ function deleteToDoItem(index) {
   all.classList.add("active-filter");
   pending.classList.remove("active-filter");
   completed.classList.remove("active-filter");
+
+  var firstLiTag = document.getElementById("item-0");
+  if (!firstLiTag) {
+    clearBtn.classList.remove("active-btn");
+    clearBtn.setAttribute("disabled", "");
+  }
 }
 
 function editToDoItem(event, index) {
