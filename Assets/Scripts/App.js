@@ -1,3 +1,4 @@
+var body = document.getElementsByTagName("body");
 var input = document.getElementById("task-input");
 var resultContainer = document.getElementById("result-container");
 var all = document.getElementById("all");
@@ -77,6 +78,20 @@ function showToDoItem(filter) {
             <li id="empty">You don't have any task here</li>
             `;
     resultContainer.innerHTML = li;
+  }
+
+  if (body[0].offsetWidth > 480) {
+    if (resultContainer.offsetHeight >= 164) {
+      resultContainer.classList.add("scroll");
+    } else {
+      resultContainer.classList.remove("scroll");
+    }
+  } else {
+    if (resultContainer.offsetHeight >= 144) {
+      resultContainer.classList.add("scroll");
+    } else {
+      resultContainer.classList.remove("scroll");
+    }
   }
 }
 
