@@ -22,6 +22,7 @@ body {
   background-color: white;
   border-radius: 7px;
   width: 40vw;
+  padding-bottom: 22px;
 }
 
 #input-container {
@@ -79,22 +80,26 @@ body {
 
   #filters span.active-filter {
     color: #3d7aff;
+    border-bottom: 2px solid #3d7aff;
+    padding-bottom: 3px;
   }
 }
 
 #result-container {
-  width: 100%;
-  padding: 5px 27px 5px 27px;
-  max-height: 205px;
-  overflow: scroll;
+  width: 99%;
+  padding: 0px 23px 0 27px;
+  margin-right: 4px;
+  margin-top: 22px;
 
   li {
     height: 60px;
+    padding-bottom: 20px;
     list-style: none;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
+    border-bottom: 1px solid #3d7aff;
 
     label {
       position: relative;
@@ -107,8 +112,18 @@ body {
     }
   }
 
+  li:first-child {
+    height: 45px;
+  }
+
+  li:last-child {
+    border-bottom: 0;
+  }
+
   li#empty {
     font-size: 15px;
+    height: 45px;
+    padding-bottom: 20px;
   }
 }
 
@@ -137,6 +152,7 @@ body {
 @media screen and (max-width: 480px) {
   #container {
     width: 90vw;
+    padding-bottom: 12px;
   }
 
   #input-container {
@@ -170,8 +186,8 @@ body {
   }
 
   #result-container {
-    padding: 5px 20px 0px 20px;
-    max-height: 170px;
+    padding: 0 17px 0 20px;
+    margin-top: 12px;
 
     li {
       height: 50px;
