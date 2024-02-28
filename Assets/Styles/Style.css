@@ -127,8 +127,25 @@ body {
   }
 }
 
-::-webkit-scrollbar {
-  width: 0px;
+#result-container.scroll {
+  max-height: 164px;
+  overflow-y: scroll;
+  padding-right: 18.3px;
+}
+
+#result-container::-webkit-scrollbar {
+  width: 5px;
+  height: 0px;
+}
+
+#result-container::-webkit-scrollbar-track {
+  border-radius: 2px;
+  background-color: #f1f1f1;
+}
+
+#result-container::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: #dbdada;
 }
 
 @media screen and (max-width: 1279px) {
@@ -202,5 +219,10 @@ body {
     li#empty {
       font-size: 13px;
     }
+  }
+
+  #result-container.scroll {
+    max-height: 144px;
+    padding-right: 12.3px;
   }
 }
