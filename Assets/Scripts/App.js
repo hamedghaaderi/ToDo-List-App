@@ -7,7 +7,7 @@ var completed = document.getElementById("completed");
 var clearBtn = document.getElementById("clear-btn");
 var items = JSON.parse(localStorage.getItem("ToDo-Items")) ?? [];
 var isTaskEdited = false;
-var textId;
+var itemsId;
 
 input.addEventListener("keyup", function (event) {
   var inputValue = input.value.trim();
@@ -188,7 +188,7 @@ function editToDoItem(event, index) {
     event.target.parentElement.parentElement.children[0].children[1]
       .textContent;
 
-  textId = index;
+  itemsId = index;
   input.value = labelValue;
   input.focus();
   isTaskEdited = true;
