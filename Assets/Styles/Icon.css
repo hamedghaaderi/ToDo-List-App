@@ -9,7 +9,6 @@
   font-style: normal;
   font-display: block;
 }
-
 i {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: "icomoon" !important;
@@ -23,7 +22,6 @@ i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 .edit:before {
   content: "\e900";
   color: #3d7aff;
@@ -38,12 +36,10 @@ i {
   padding: 5px;
   font-size: 18px;
 }
-
 @media screen and (max-width: 480px) {
   .edit:before {
     font-size: 14px;
   }
-
   .delete:before {
     font-size: 14px;
   }
