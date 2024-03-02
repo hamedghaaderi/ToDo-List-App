@@ -26,7 +26,7 @@ input.addEventListener("keyup", function (event) {
       items.push(item);
     } else {
       isTaskEdited = false;
-      items[textId].todoTitle = inputValue;
+      items[itemsId].todoTitle = inputValue;
     }
     input.value = "";
     showToDoItem("all");
