@@ -209,6 +209,7 @@ body {
     li {
       height: 50px;
       font-size: 13px;
+      padding-bottom: 16px;
 
       input {
         width: 11px;
