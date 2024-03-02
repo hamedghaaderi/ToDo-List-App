@@ -8,6 +8,26 @@
     <title>ToDo List App</title>
   </head>
   <body>
+    <div id="container">
+      <div id="input-container">
+        <input
+          type="text"
+          id="task-input"
+          name="task"
+          placeholder="Add a new task"
+        />
+      </div>
+      <div id="btn-container">
+        <div id="filters">
+          <span id="all" class="active-filter">All</span>
+          <span id="pending">Pending</span>
+          <span id="completed">Completed</span>
+        </div>
+        <button type="button" id="clear-btn" disabled>Clear All</button>
+      </div>
+      <hr color="#3d7aff" />
+      <ul id="result-container"></ul>
+    </div>
     <script src="Assets/Scripts/App.js"></script>
   </body>
 </html>
